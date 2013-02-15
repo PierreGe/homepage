@@ -300,11 +300,13 @@ nav a:hover {
     .main article {
         float: left;
         width: 57%;
+        min-width: 570px;
     }
 
     .main aside {
         float: right;
         width: 28%;
+        min-width: 300px;
     }
 }
 
