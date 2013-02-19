@@ -221,6 +221,10 @@ nav a:hover {
     color: #CCC;
 }
 
+.pagination li a:focus {
+    outline: 0;
+}
+
 .pagination {
     width:550px;
     padding: 0;
