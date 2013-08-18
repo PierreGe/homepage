@@ -333,7 +333,7 @@ nav a:hover {
     WIDE: Main
    ============ */
 
-    .main article {
+    .main #content {
         float: left;
         width: 57%;
         min-width: 570px;

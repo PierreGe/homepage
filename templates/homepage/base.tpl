@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -13,10 +14,10 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-latest.min.js"></script>
-        <script src="js/vendor/slides.jquery.js"></script>
-        <script src="js/main.js"></script>
+        <script src="{% static 'js/vendor/modernizr.js' %}"></script>
+        <script src="{% static 'js/vendor/jquery.js' %}"></script>
+        <script src="{% static 'js/vendor/slides.jquery.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
