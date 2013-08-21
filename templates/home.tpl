@@ -39,10 +39,11 @@ UrLab est un endroit où des étudiants de l’ULB ayant un intérêt pour l’i
 UrLab est un lieu de rencontre pour les étudiants intéressés par la technologie. C'est un lieu où l'on développe ses projets et l'on partage ses connaissances par l'intermédiaire d'ateliers et de conférences.
 </p>
 <h1>Prochains événements</h1>
+<ul>
 {% for event in events %}
-    <a href="{{event.url}}">{{event.name}}</a>, le {{event.date}}<br>
+    <li><a href="{{event.url}}">{{event.name}}</a>, le {{event.date}}<br></li>
 {% endfor %}
-
+</ul>
 {% endblock %}
 
 
