@@ -92,6 +92,40 @@ body {
     background-image: url('../img/dark_bg.png');
 }
 
+.main aside ul{
+    padding: 0;
+}
+
+.main aside li{
+    list-style: none;
+}
+.main aside a{
+    color: white;
+}
+
+.main aside a:hover{
+    text-decoration: none;
+}
+
+.main aside #carte-container{
+    background-color: rgba(255,255,255,0.6);
+    text-align: center;
+}
+
+.main aside #carte{
+    width: 300px;
+    height :300px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main aside #carte-container a {
+    color: #0078A8;
+    font-size: 0.7em;
+    text-decoration: none;
+
+}
+
 .title {
     color: white;
     text-indent: 1000em;
@@ -268,9 +302,9 @@ nav a:hover {
 
     nav a {
         float: left;
-        width: 27%;
+        width: 17%;
         margin: 0 1.7%;
-        padding: 10px 2%;
+        padding: 7px 2%;
         margin-bottom: 0;
     }
 
