@@ -53,7 +53,7 @@ UrLab est un lieu de rencontre pour les étudiants intéressés par la technolog
         <li>IRC : irc.freenode.org#urlab</li>
         <li>Mail : contact@urlab.be</li>
         <li>Mailing-lists</li>
-        <li>Adresse : 131, av. Buyl
+        <li>Adresse : 131, av. Buyl, 1050 Ixelles
             <div id="carte-container">
                 <iframe id="carte" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=4.380519390106201%2C50.811327967126935%2C4.388464093208312%2C50.81458530470962&amp;layer=mapnik&amp;marker=50.8129566643136%2C4.384491741657257"></iframe>
                 <br/>
