@@ -11,9 +11,6 @@
             </div>
         {% endfor %}
         <div>
-            <img width="570" src="http://i.imgur.com/aobCl9ch.jpg">
-        </div>
-        <div>
             <img width="570" src="http://www.cientificosaficionados.com/tbo/fusor/fusor30.jpg">
         </div>
         <div>
