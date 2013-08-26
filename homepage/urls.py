@@ -9,6 +9,7 @@ from django.views.generic import RedirectView
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'homepage.views.home', name='home'),
+    url(r'^events$', 'homepage.views.parse_events_from_wiki', name='events'),
     url(r'^favicon.ico$', RedirectView.as_view(url=settings.STATIC_URL+'img/favicon.ico')),
     # url(r'^homepage/', include('homepage.foo.urls')),
 
