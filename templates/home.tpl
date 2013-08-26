@@ -47,7 +47,7 @@ UrLab est un lieu de rencontre pour les étudiants intéressés par la technolog
             for (var i=0; i<data['events'].length; i++){
                 var ev = data['events'][i];
                 events_dom.append(
-                    '<li><a href="'+ev.url+'">'+ev.name+'</a>, le '+ev.date+'<br></li>'
+                    '<li><a href="'+ev.url+'" target="_blank">'+ev.name+'</a>, le '+ev.date+'<br></li>'
                 );
             }
         }).error(function(xhr){
