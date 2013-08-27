@@ -36,11 +36,26 @@ UrLab permet aux étudiants de l’ULB ayant un intérêt pour l’informatique,
 UrLab est un lieu de rencontre pour les étudiants intéressés par la technologie. C’est un lieu où l’on développe ses projets et l’on partage ses connaissances par l’intermédiaire d’ateliers et de conférences.
 </p>
 <h1>Prochains événements</h1>
-<ul>
-{% for event in events %}
-    <li><a href="{{event.url}}">{{event.name}}</a>, le {{event.date}}<br></li>
-{% endfor %}
+<ul id="events">
+    <li>Chargement en cours...</li>
 </ul>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var events_dom = $('#events');
+        $.getJSON('{% url "events" %}', function(data){
+            events_dom.empty();
+            for (var i=0; i<data['events'].length; i++){
+                var ev = data['events'][i];
+                events_dom.append(
+                    '<li><a href="'+ev.url+'" target="_blank">'+ev.name+'</a>, le '+ev.date+'<br></li>'
+                );
+            }
+        }).error(function(xhr){
+            events_dom.empty();
+            events_dom.append('<li class="error">Erreur AJAX !</li>')
+        });
+    });
+</script>
 {% endblock %}
 
 
