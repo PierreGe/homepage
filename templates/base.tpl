@@ -30,10 +30,10 @@
 
                 <nav>
                     <ul>
-                        <li><a href="//urlab.be/wiki">Wiki</a></li>
+                        <li><a href="//wiki.urlab.be/">Wiki</a></li>
                         <li><a href="//pamela.urlab.be">Pamela</a></li>
                         <li><a href="//github.com/UrLab">GitHub</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="//wiki.urlab.be/">Contact</a></li>
                     </ul>
                 </nav>
                 <h2>Come to our side, we've got poneyz!</h2>
