@@ -43,12 +43,5 @@ def home(request):
     return render(request, 'home.tpl',context)
 
 def wiki_404(request, url):
-    # wiki_url = 'http://urlab.be/{}'.format(url)
-    # r = requests.head(wiki_url,allow_redirects=True)
-    # code = r.status_code
-    # if code//100 == 2 or code//100 == 3:
-    #     return redirect(str(r.url), permanent=True)
-    # else:
-    #     return HttpResponse('<h1>Page was fqqsdfqsdfsdfdsffound</h1>'+str(code))
-    wiki_url = 'http://urlab.be/{}'.format(url)
+    wiki_url = 'http://wiki.urlab.be/{}'.format(url)
     return redirect(wiki_url, permanent=False)
