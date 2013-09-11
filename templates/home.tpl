@@ -10,15 +10,6 @@
                 <img width="570" src="{{ image }}">
             </div>
         {% endfor %}
-        <div>
-            <img width="570" src="http://www.cientificosaficionados.com/tbo/fusor/fusor30.jpg">
-        </div>
-        <div>
-            <img width="570" src="http://farm9.staticflickr.com/8069/8239211341_d3b157c2ce_z.jpg">
-        </div>
-        <div>
-            <img width="570" src="http://www.welovebuzz.com/wp-content/uploads/2012/10/google-datacenter-tech-13.jpg">
-        </div>
     </div>
 </div>
 
