@@ -43,7 +43,7 @@ UrLab est un lieu de rencontre pour les étudiants intéressés par la technolog
             }
         }).error(function(xhr){
             events_dom.empty();
-            events_dom.append('<li class="error">Erreur AJAX !</li>')
+            events_dom.append('<li class="error">Les informations n\'ont pas pu se charger, veuillez ré-essayer plus tard.</li>')
         });
     });
 </script>

@@ -12,7 +12,7 @@ def parse_events_from_wiki(request):
     """TODO: make some cache !"""
     # Get last events
     now = datetime.now()
-    url = ("http://urlab.be/api.php?action=ask&query=" +
+    url = ("http://wiki.urlab.be/api.php?action=ask&query=" +
         "[[Category:Event]] [[Event status::Prêt]]" +
         "[[Date::>{}-{}-{}T00:00:00]]".format(now.year, now.month, now.day) +
         "|?Date|?Place|?Modification date" +
