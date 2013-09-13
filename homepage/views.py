@@ -7,6 +7,7 @@ from path import path
 import settings
 import requests
 import json
+import collections
 
 def parse_events_from_wiki(request):
     """TODO: make some cache !"""
@@ -15,12 +16,12 @@ def parse_events_from_wiki(request):
     url = ("http://wiki.urlab.be/api.php?action=ask&query=" +
         "[[Category:Event]] [[Event status::Prêt]]" +
         "[[Date::>{}-{}-{}T00:00:00]]".format(now.year, now.month, now.day) +
-        "|?Date|?Place|?Modification date" +
-        "|sort=Modification date|order=desc" +
+        "|?Date|?Place" +
+        "|sort=date|order=asc" +
         "&format=json"
     )
     r = requests.get(url)
-    result = r.json()
+    result = r.json(object_pairs_hook=collections.OrderedDict) #Preserve the order of the request
     raw_events = result['query']['results']
     events = {'events': [
         {
