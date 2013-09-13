@@ -1,9 +1,7 @@
 # Hoi !
 
-This is what may be the future homepage for [UrLab.be](http://urlab.be).
+This is the homepage for [UrLab.be](http://urlab.be).
 It's written in Django, but the most part is static html/css, Django is used only for dynamically query the wiki.
-
-For now, a test server is hosted on [homepage.urlab.be](http://homepage.urlab.be)
 
 ## Install
 
