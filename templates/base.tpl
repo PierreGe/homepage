@@ -33,7 +33,6 @@
                         <li><a href="//wiki.urlab.be/Main_Page">Wiki</a></li>
                         <li><a href="//pamela.urlab.be">Pamela</a></li>
                         <li><a href="//github.com/UrLab">GitHub</a></li>
-                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
                 <h2>Come to our side, we've got poneyz!</h2>
