@@ -53,7 +53,7 @@ UrLab est un lieu de rencontre pour les étudiants intéressés par la technolog
 {% block aside %}
     <h3>Contact</h3>
     <ul>
-        <li>IRC : <a href="http://webchat.freenode.net/?channels=urlab">irc.freenode.org#urlab</a></li>
+        <li>IRC : <a href="http://webchat.freenode.net/?channels=urlab">chat.freenode.org#urlab</a></li>
         <li>Mail : contact@urlab.be</li>
         <li>Mailing-lists : <a href="http://www.cerkinfo.be/cgi-bin/mailman/listinfo/hackulb">Annonces</a>,
             <a href="http://www.cerkinfo.be/cgi-bin/mailman/listinfo/urlab-discussions">Discussions</a>
