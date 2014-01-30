@@ -6,7 +6,7 @@ $(function(){
         paginationClass: 'pagination'
     });
 
-    $.getJSON("http://api.urlab.be/spaceapi/status", function(json) {
+    $.getJSON("//api.urlab.be/spaceapi/status", function(json) {
         if (json.state == "open")
             statustext = "Nous sommes ouverts, viendez ! :-)";
         else
