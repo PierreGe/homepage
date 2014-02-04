@@ -3,21 +3,6 @@
 {% block title %}Home − UrLab{% endblock %}
 
 {% block content %}
-
-<div id="fosdem" style="
-border: 5px solid rgb(169, 0, 177);
-width: 500px;
-margin-bottom: 20px;
-padding: 20px;">
-<img src="https://fosdem.org/2014/icon-1a3618bf8816852a0bba761ea9367f1a8f95da41dd7f366e327aa4a543aec99a.png" style="
-float: left;
-height: 5em;
-margin-right: 20px;">
-UrLab will be at FOSDEM 2014!<br>
-Just look for <span style="font-family: monospace; font-weight: bold; font-size: 1.2em;">/tmp/urlab</span> signs ;)<br>
-<a href="https://wiki.urlab.be/Evenement:FOSDEM_2014">More info on our wiki</a>
-<div style="clear: both"></div>
-</div>
 <div id="slides">
     <div class="slides_container">
         {% for image in slideshow %}
@@ -27,8 +12,6 @@ Just look for <span style="font-family: monospace; font-weight: bold; font-size:
         {% endfor %}
     </div>
 </div>
-
-
 
 <h1>UrLab ?</h1>
 <p>UrLab est le hackerspace de l’ULB. Il s’agit d'un laboratoire ouvert par et pour les étudiants, où l’on met à disposition une infrastructure pour qu’ils puissent y exprimer leur créativité de manière collaborative.</p>
