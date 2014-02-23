@@ -22,7 +22,7 @@ def cal(request):
             continue
         # TODO : add url
         time = arrow.get(event.event_date.replace(tzinfo=None), 'Europe/Brussels')
-        e = iEvent(name=event.name, begin=time, duration=duration, location=event.place)
+        e = iEvent(name=event.name.replace(',', '\,'), begin=time, duration=duration, location=event.place.replace(',', '\,'))
         cal.events.append(e)
 
     return HttpResponse(str(cal), content_type="text/calendar")
