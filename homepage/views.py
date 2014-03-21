@@ -27,13 +27,16 @@ def parse_events_from_wiki(request):
     r = requests.get(url)
     result = r.json(object_pairs_hook=collections.OrderedDict) # Preserve the order of the request
     raw_events = result['query']['results']
-    events = {'events': [
-        {
-            'name': raw_event['fulltext'][10:], # Strip "Evenement:" in the begining
-            'url': raw_event['fullurl'],
-            'date': datetime.fromtimestamp(float(raw_event['printouts']['Date'][0])).strftime('%d/%m/%Y %Hh%M'),
-        } for title, raw_event in raw_events.iteritems()
-    ]}
+    if isinstance(raw_events, list):
+        events = {'events': []}
+    else:
+        events = {'events': [
+            {
+                'name': raw_event['fulltext'][10:], # Strip "Evenement:" in the begining
+                'url': raw_event['fullurl'],
+                'date': datetime.fromtimestamp(float(raw_event['printouts']['Date'][0])).strftime('%d/%m/%Y %Hh%M'),
+            } for title, raw_event in raw_events.iteritems()
+        ]}
     return HttpResponse(json.dumps(events), content_type="application/json")
 
 
