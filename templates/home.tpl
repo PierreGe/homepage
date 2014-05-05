@@ -16,7 +16,7 @@
 <h1>UrLab ?</h1>
 <p>UrLab est le hackerspace de l’ULB. Il s’agit d'un laboratoire ouvert par et pour les étudiants, où l’on met à disposition une infrastructure pour qu’ils puissent y exprimer leur créativité de manière collaborative.</p>
 <p>
-UrLab permet aux étudiants de l’ULB ayant un intérêt pour l’informatique, l’électronique ou d’une manière générale la technologie, de se rencontrer, partager et collaborer. Il peut être comparé à un laboratoire ouvert. Les thèmes abordés peuvent avoir un lien direct avec les cours mais pas nécessairement, le but étant d’explorer d’autres domaines, ou d’en approfondir.</p>
+UrLab permet aux étudiants de l’ULB ayant un intérêt pour l’informatique, l’électronique ou d’une manière générale la technologie, de se rencontrer, partager et collaborer. Il peut être comparé à un laboratoire ouvert. Les thèmes abordés peuvent avoir un lien direct avec les cours mais pas nécessairement, le but étant d’explorer d’autres domaines, ou d’en approfondir. Quelques exemples sont présentés sur la page <a href="{% url 'projects' %}">projets</a></p>
 <h2>Un hackerspace ?</h2>
 <p>Le hackerspace est composé de trois facettes :
 <ul>

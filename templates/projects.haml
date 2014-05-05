@@ -1,0 +1,21 @@
+- extends "base.tpl"
+- block title
+    Projets - UrLab
+- block content
+    %h1 Projets passés, en cours et à venir
+
+    %h3 HAL
+    %p
+        %a{'href': "http://github.com/urlab/hal", 'target': '_blank'} HAL
+        est notre interface hackerspace-internet. Il s'agit d'un montage maison d'électronique et des logiciels correspondant pour allumer des LEDs, connecter la sonnette et la porte des escalier à 
+        %a{'href': "http://webchat.freenode.net/?channels=urlab", 'target': '_blank'} notre salon de chat
+        , collecter des données météo et d'utilisation de l'éclairage/chauffage.
+    %p
+        - for img in hal
+            %img{'src': "{{img}}", 'height': 250}
+
+    %h3 Reprap
+    %p
+        Grâce au BEA, nous avons obtenu une imprimante 3D; le modèle Reprap Mendel. C'est une imprimante libre, ce qui signifie que n'importe qui peut en téléchager les plans et imprimer les composants nécessaires à sa réalisation (parce que oui, une imprimante 3D ça sert aussi à imprimer des imprimantes 3D). L'imprimante est encore en cours de montage, n'hésite pas à venir voir le projet évoluer, et pourquoi pas, y participer ?
+
+    

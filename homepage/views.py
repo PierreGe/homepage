@@ -52,6 +52,13 @@ def home(request):
     }
     return render(request, 'home.tpl', context)
 
+def projects(request):
+    dir = path(settings.PROJECT_PATH) / "static/img/projects/hal"    
+    images = map(lambda p: settings.STATIC_URL + 'img/projects/hal/' + p.name, dir.files())
+
+    context = {'hal': images}
+    return render(request, 'projects.haml', context)
+
 
 @cache_page(60 * 15)
 def wiki_404(request, url):
