@@ -3,3 +3,4 @@ path.py==4.3
 requests==1.2.3
 ics
 pytz
+hamlpy
