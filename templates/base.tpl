@@ -50,8 +50,10 @@
             </div>
         </div>
         <div id="footer-container" class="footer-container">
-            <footer class="wrapper">
-                UrLab, le hackerspace de l’ULB − <a href="https://github.com/C4ptainCrunch/UrLab-homepage/blob/master/README.md">Licence and credits</a> − <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
+        <footer class="wrapper">
+                UrLab, le hackerspace de l’Université Libre de Bruxelles − <a href="http://cerkinfo.be/">Cercle Informatique ASBL</a> −
+                <a href="https://github.com/C4ptainCrunch/UrLab-homepage/blob/master/README.md">Licence and credits</a> − 
+                <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
             </footer>
         </div>
 
