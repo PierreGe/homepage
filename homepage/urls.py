@@ -8,6 +8,7 @@ from django.views.generic import RedirectView
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'homepage.views.home', name='home'),
+    url(r'^projects$', 'homepage.views.projects', name='projects'),
     url(r'^events$', 'homepage.views.parse_events_from_wiki', name='events'),
     url(r'^events.ics$', 'events.views.cal', name='ics'),
     url(r'^hackeragenda.json$', 'events.views.hackeragenda', name='ha'),
