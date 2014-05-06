@@ -53,10 +53,12 @@ def home(request):
     return render(request, 'home.tpl', context)
 
 def projects(request):
-    dir = path(settings.PROJECT_PATH) / "static/img/projects/hal"    
-    images = map(lambda p: settings.STATIC_URL + 'img/projects/hal/' + p.name, dir.files())
-
-    context = {'hal': images}
+    context = {}
+    proj_root = path(settings.PROJECT_PATH) / "static/img/projects"
+    fmt = settings.STATIC_URL + 'img/projects/{}/{}'
+    for proj in proj_root.dirs():
+        images = map(lambda f: fmt.format(proj.name, f.name), proj.files())
+        context[proj.name] = images
     return render(request, 'projects.haml', context)
 
 
