@@ -16,7 +16,7 @@
 <h1>UrLab ?</h1>
 <p>UrLab est le hackerspace de l’ULB. Il s’agit d'un laboratoire ouvert par et pour les étudiants, où l’on met à disposition une infrastructure pour qu’ils puissent y exprimer leur créativité de manière collaborative.</p>
 <p>
-UrLab permet aux étudiants de l’ULB ayant un intérêt pour l’informatique, l’électronique ou d’une manière générale la technologie, de se rencontrer, partager et collaborer. Il peut être comparé à un laboratoire ouvert. Les thèmes abordés peuvent avoir un lien direct avec les cours mais pas nécessairement, le but étant d’explorer d’autres domaines, ou d’en approfondir. Quelques exemples sont présentés sur la page <a href="{% url 'projects' %}">projets</a></p>
+UrLab permet aux étudiants de l’ULB ayant un intérêt pour l’informatique, l’électronique ou d’une manière générale la technologie, de se rencontrer, partager et collaborer. Il peut être comparé à un laboratoire ouvert. Les thèmes abordés peuvent avoir un lien direct avec les cours mais pas nécessairement, le but étant d’explorer d’autres domaines, ou d’en approfondir. Quelques exemples sont présentés sur la page <a href="{% url "projects" %}">projets</a></p>
 <h2>Un hackerspace ?</h2>
 <p>Le hackerspace est composé de trois facettes :
 <ul>
@@ -37,8 +37,13 @@ UrLab est un lieu de rencontre pour les étudiants intéressés par la technolog
             events_dom.empty();
             for (var i=0; i<data['events'].length; i++){
                 var ev = data['events'][i];
+                ev.date = new Date(ev.date);
+                var m = String(ev.date.getMinutes());
+                if(m.length < 2){
+                    m = "0" + m;
+                }
                 events_dom.append(
-                    '<li><a href="'+ev.url+'" target="_blank">'+ev.name+'</a>, le '+ev.date+'<br></li>'
+                    '<li><a href="'+ev.url+'" target="_blank">'+ev.name+'</a>, le '+ev.date.getDate()+'/'+ (ev.date.getMonth() + 1) + ' à '+ev.date.getHours()+'h'+m+'<br></li>'
                 );
             }
         }).error(function(xhr){

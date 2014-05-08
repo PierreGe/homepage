@@ -14,30 +14,7 @@ from django.views.decorators.cache import cache_page
 @cache_page(60 * 15)
 def parse_events_from_wiki(request):
     """TODO: make some cache !"""
-    # Get last events
-    now = datetime.now()
-    url = (
-        "http://wiki.urlab.be/api.php?action=ask&query=" +
-        "[[Category:Event]] [[Event status::Prêt]]" +
-        "[[Date::>{}-{}-{}T00:00:00]]".format(now.year, now.month, now.day) +
-        "|?Date|?Place" +
-        "|sort=date|order=asc" +
-        "&format=json"
-    )
-    r = requests.get(url)
-    result = r.json(object_pairs_hook=collections.OrderedDict) # Preserve the order of the request
-    raw_events = result['query']['results']
-    if isinstance(raw_events, list):
-        events = {'events': []}
-    else:
-        events = {'events': [
-            {
-                'name': raw_event['fulltext'][10:], # Strip "Evenement:" in the begining
-                'url': raw_event['fullurl'],
-                'date': datetime.fromtimestamp(float(raw_event['printouts']['Date'][0])).strftime('%d/%m/%Y %Hh%M'),
-            } for title, raw_event in raw_events.iteritems()
-        ]}
-    return HttpResponse(json.dumps(events), content_type="application/json")
+    return redirect("/events.json", permanent=True)
 
 
 @cache_page(60 * 15)

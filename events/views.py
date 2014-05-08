@@ -29,6 +29,25 @@ def cal(request):
 
 
 @cache_page(60 * 15)
+def homepage(request):
+    events = Event.objects.all()
+    j_events = []
+    for event in events:
+        if event.event_date is None or not event.status == u"Prêt":
+            continue
+        t = arrow.get(event.event_date.replace(tzinfo=None), 'Europe/Brussels')
+        if t < arrow.now():
+            continue
+        j_events.append({
+            "url": "http:" + event.url,
+            "name": event.name,
+            "date": t.isoformat()
+        })
+
+    return HttpResponse(json.dumps({"events": j_events}), content_type="application/json")
+
+
+@cache_page(60 * 15)
 def hackeragenda(request):
     ret = {
         "org": "urlab",
