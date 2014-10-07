@@ -46,6 +46,10 @@
                 </div>
                 <aside>
                     {% block aside %}
+                    <a href="{% url "home" %}">Home</a>
+                    -
+                    <a href="{% url "projects" %}">Projets</a>
+                    <a class="status" id="status_bar" href="http://pamela.urlab.be/"></a>
                     <h3>Contact</h3>
                     <ul>
                         <li>IRC : <a href="http://webchat.freenode.net/?channels=urlab">chat.freenode.org#urlab</a></li>

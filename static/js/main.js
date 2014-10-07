@@ -11,6 +11,8 @@ $(function(){
             statustext = "Nous sommes ouverts, viendez ! :-)";
         else
             statustext = "Le hackerspace est fermé pour l'instant";
-        $('aside').prepend($.parseHTML('<a href="http://pamela.urlab.be/" class="status status'+json.state+'">'+statustext+'</a>'));
+        $('#status_bar').addClass("status" + json.state);
+        $('#status_bar').append(statustext);
+        $('#status_bar').css('display', 'block');
     });
 });

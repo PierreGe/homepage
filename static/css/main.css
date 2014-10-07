@@ -288,6 +288,10 @@ nav a:hover {
     background-color: #CC0000;
 }
 
+#status_bar {
+    display: none;
+}
+
 
 /* ==========================================================================
    Media Queries
