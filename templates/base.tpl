@@ -45,7 +45,26 @@
                     {% block content %} {% endblock %}
                 </div>
                 <aside>
-                    {% block aside %} {% endblock %}
+                    {% block aside %}
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>IRC : <a href="http://webchat.freenode.net/?channels=urlab">chat.freenode.org#urlab</a></li>
+                        <li>Mail : contact@urlab.be</li>
+                        <li>Mailing-lists : <a href="//www.cerkinfo.be/cgi-bin/mailman/listinfo/hackulb">Annonces</a>,
+                            <a href="http://www.cerkinfo.be/cgi-bin/mailman/listinfo/urlab-discussions">Discussions</a>
+                        </li>
+                        <li>Social : <a href="https://twitter.com/UrLabBxl">Twitter</a>, <a href="https://www.facebook.com/urlabbxl">Facebook</a></li>
+                        <li>Adresse : 131, av. Buyl, 1050 Ixelles
+                            <div id="carte-container">
+                                <iframe id="carte" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//www.openstreetmap.org/export/embed.html?bbox=4.380519390106201%2C50.811327967126935%2C4.388464093208312%2C50.81458530470962&amp;layer=mapnik&amp;marker=50.8129566643136%2C4.384491741657257"></iframe>
+                                <br/>
+                                <a href="//www.openstreetmap.org/?mlat=50.81296&amp;mlon=4.38449#map=18/50.81296/4.38449">Agrandir la carte</a>
+                            </div>
+                        </li>
+                        <li><a href="http://hackerspaces.be">Autres hackerspaces en Belgique</a></li>
+                        <li><a href="//hackeragenda.urlab.be">Agenda des évènements des hackerspaces</a></li>
+                    </ul>
+                    {% endblock %}
                 </aside>
             </div>
         </div>
