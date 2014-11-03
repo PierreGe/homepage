@@ -4,3 +4,4 @@ requests==1.2.3
 ics
 pytz
 hamlpy
+beautifulsoup4

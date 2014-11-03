@@ -9,12 +9,40 @@ import requests
 import json
 import collections
 from django.views.decorators.cache import cache_page
-
+from bs4 import BeautifulSoup
+from pytz import timezone
 
 @cache_page(60 * 15)
 def parse_events_from_wiki(request):
-    """TODO: make some cache !"""
-    return redirect("/events.json", permanent=True)
+    # Grab events from wiki home page
+    soup = BeautifulSoup(requests.get("http://wiki.urlab.be/Main_Page").content)
+    table = soup.find("table", attrs={"class": "wikitable"})
+    brussels = timezone('Europe/Brussels')
+    events = []
+
+    for line in table.findAll('tr'):
+        # Skip titles
+        if line.find('th'):
+            continue
+
+        name, date, place = map(lambda x: x.text.strip(), line.findAll('td'))
+        url = line.find('a').attrs['href']
+        if url[:4] != 'http':
+            url = "http://wiki.urlab.be" + url
+
+        # "3 November 2014 18:30:00"
+        date = datetime.strptime(date.lower(), "%d %B %Y %H:%M:%S")
+        events.append({
+            "name": name,
+            "date": brussels.localize(date).strftime('%Y-%m-%dT%H:%M:%S%z'),
+            "url": url,
+            "place": place
+        })
+
+    return HttpResponse(
+        json.dumps({'events': events}), 
+        content_type='application/json'
+    )
 
 
 @cache_page(60 * 15)
