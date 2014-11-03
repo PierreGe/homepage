@@ -6,20 +6,18 @@ from django.views.generic import RedirectView
 
 
 urlpatterns = patterns('',
-    # Examples:
+    # Pages
     url(r'^$', 'homepage.views.home', name='home'),
     url(r'^projects$', 'homepage.views.projects', name='projects'),
+    url(r'^sm', RedirectView.as_view(url="http://wiki.urlab.be/Evenement:SmartMonday_Novembre_2014")),
+
+    # Events data
     url(r'^events$', 'homepage.views.parse_events_from_wiki', name='events-old'),
     url(r'^events.json$', 'events.views.homepage', name='events'),
     url(r'^events.ics$', 'events.views.cal', name='ics'),
     url(r'^hackeragenda.json$', 'events.views.hackeragenda', name='ha'),
     url(r'^favicon.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
+
+    # Any unknown route goes to wiki
     url(r'^(?P<url>.*)/$', 'homepage.views.wiki_404'),
-    # url(r'^homepage/', include('homepage.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
 )
