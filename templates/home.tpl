@@ -26,7 +26,7 @@ UrLab permet aux étudiants de l’ULB ayant un intérêt pour l’informatique,
 </ul>
 UrLab est un lieu de rencontre pour les étudiants intéressés par la technologie. C’est un lieu où l’on développe ses projets et l’on partage ses connaissances par l’intermédiaire d’ateliers et de conférences.
 </p>
-<h1>Prochains événements</h1>
+<!-- <h1>Prochains événements</h1>
 <ul id="events">
     <li>Chargement en cours...</li>
 </ul>
@@ -51,5 +51,5 @@ UrLab est un lieu de rencontre pour les étudiants intéressés par la technolog
             events_dom.append('<li class="error">Les informations n\'ont pas pu se charger, veuillez ré-essayer plus tard.</li>')
         });
     });
-</script>
+</script> -->
 {% endblock %}
