@@ -32,6 +32,7 @@ DATABASES = {
 }
 
 
+ENABLE_CACHE = True
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',

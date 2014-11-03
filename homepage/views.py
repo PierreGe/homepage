@@ -8,9 +8,20 @@ import settings
 import requests
 import json
 import collections
-from django.views.decorators.cache import cache_page
+import django.views.decorators.cache as django_cache
 from bs4 import BeautifulSoup
 from pytz import timezone
+
+
+def cache_page(*args, **kwargs):
+    if settings.ENABLE_CACHE:
+        def wrapper(func):
+            return django_cache.cache_page(func, *args, **kwargs)
+    else:
+        def wrapper(func):
+            return func
+    return wrapper
+
 
 @cache_page(60 * 15)
 def parse_events_from_wiki(request):
@@ -47,7 +58,6 @@ def parse_events_from_wiki(request):
 
 @cache_page(60 * 15)
 def home(request):
-
     # Get some images for the slideshow
     dir = path(settings.PROJECT_PATH) / "static/img/slideshow"
     images = map(lambda p: settings.STATIC_URL + 'img/slideshow/' + p.name, dir.files())
