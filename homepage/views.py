@@ -26,29 +26,32 @@ def cache_page(*args, **kwargs):
 @cache_page(60 * 15)
 def parse_events_from_wiki(request):
     # Grab events from wiki home page
-    soup = BeautifulSoup(requests.get("http://wiki.urlab.be/Main_Page").content)
-    table = soup.find("table", attrs={"class": "wikitable"})
-    brussels = timezone('Europe/Brussels')
+    html = requests.get("http://wiki.urlab.be/Main_Page").content.decode('utf-8')
     events = []
 
-    for line in table.findAll('tr'):
-        # Skip titles
-        if line.find('th'):
-            continue
+    if not u"Aucun évènement à venir." in html:
+        soup = BeautifulSoup(html)
+        table = soup.find("table", attrs={"class": "wikitable"})
+        brussels = timezone('Europe/Brussels')
 
-        name, date, place = map(lambda x: x.text.strip(), line.findAll('td'))
-        url = line.find('a').attrs['href']
-        if url[:4] != 'http':
-            url = "http://wiki.urlab.be" + url
+        for line in table.findAll('tr'):
+            # Skip titles
+            if line.find('th'):
+                continue
 
-        # "3 November 2014 18:30:00"
-        date = datetime.strptime(date.lower(), "%d %B %Y %H:%M:%S")
-        events.append({
-            "name": name,
-            "date": brussels.localize(date).strftime('%Y-%m-%dT%H:%M:%S%z'),
-            "url": url,
-            "place": place
-        })
+            name, date, place = map(lambda x: x.text.strip(), line.findAll('td'))
+            url = line.find('a').attrs['href']
+            if url[:4] != 'http':
+                url = "http://wiki.urlab.be" + url
+
+            # "3 November 2014 18:30:00"
+            date = datetime.strptime(date.lower(), "%d %B %Y %H:%M:%S")
+            events.append({
+                "name": name,
+                "date": brussels.localize(date).strftime('%Y-%m-%dT%H:%M:%S%z'),
+                "url": url,
+                "place": place
+            })
 
     return HttpResponse(
         json.dumps({'events': events}), 
