@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     # Pages
     url(r'^$', 'homepage.views.home', name='home'),
     url(r'^projects$', 'homepage.views.projects', name='projects'),
-    url(r'^sm', RedirectView.as_view(url="http://wiki.urlab.be/Evenement:SmartMonday_Novembre_2014")),
+    url(r'^sm', RedirectView.as_view(url="http://wiki.urlab.be/Evenement:SmartMonday_Mars_2015")),
     url(r'^git', RedirectView.as_view(url="http://wiki.urlab.be/Evenement:Workshop_Git_2014")),
 
     # Events data
